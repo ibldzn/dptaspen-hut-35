@@ -7,6 +7,17 @@
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"
+    />
     <title>HUT DP TASPEN ke-35</title>
   </head>
   <body class="min-w-screen min-h-screen flex flex-col">
@@ -41,9 +52,33 @@
           <p>N</p>
         </div>
         <div
+          id="logo-and-qr"
           class="flex flex-col py-4 items-center justify-center rounded-full bg-white size-72 text-center border-4 border-[#1AC0F3] overflow-hidden my-2"
         >
-          <image src="./public/HUT.png" alt="HUT" class="size-64 pb-2" />
+          <div
+            x-data="{ flipped: false }"
+            @click="flipped = !flipped"
+            class="relative w-64 h-96 [perspective:1000px] cursor-pointer"
+          >
+            <!-- Card Inner -->
+            <div
+              :class="flipped ? '[transform:rotateY(180deg)]' : ''"
+              class="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d]"
+            >
+              <!-- Front Face -->
+              <div
+                class="absolute w-full h-full text-white flex justify-center items-center [backface-visibility:hidden]"
+              >
+                <image src="./public/HUT.png" alt="HUT" class="size-64 pb-2" />
+              </div>
+              <!-- Back Face -->
+              <div
+                class="absolute w-full h-full text-white flex justify-center items-center [backface-visibility:hidden] [transform:rotateY(180deg)] bg-white"
+              >
+                <div id="qrcode"></div>
+              </div>
+            </div>
+          </div>
         </div>
         <p class="text-2xl text-center font-semibold tracking-wider mt-8">
           Kepada
@@ -59,15 +94,8 @@
         <div
           class="flex flex-col justify-center items-center gap-8 bg-white border-4 border-[#FFCFA5] rounded-xl text-center uppercase px-24 py-4"
         >
-          <div class="flex flex-col">
-            <div
-              class="flex justify-center gap-2 text-lg font-semibold text-[#FF9A42]"
-            >
-              <p>H</p>
-              <p>a</p>
-              <p>r</p>
-              <p>i</p>
-            </div>
+          <div class="flex flex-col items-center">
+            <p class="text-lg font-semibold text-[#FF9A42]">Hari</p>
             <p class="text-xl font-semibold text-[#707277] tracking-wide">
               Sabtu
             </p>
@@ -83,7 +111,7 @@
           <div class="flex flex-col items-center">
             <p class="text-lg font-semibold text-[#FF9A42]">Pukul</p>
             <p class="text-xl font-semibold text-[#707277]">
-              10.00 - 12.00 WIB
+              08.00 - 12.30 WIB
             </p>
           </div>
 
@@ -105,9 +133,6 @@
             </p>
           </div>
         </div>
-        <p class="text-xl font-semibold text-[#707277] mt-4">
-          Reservasi : Vivian Setya 0858 9366 9306
-        </p>
       </div>
     </section>
     <section class="bg-[#ABE8FA] h-screen bg-[url('./public/dp-small.png')]">
@@ -126,10 +151,37 @@
       </div>
     </section>
     <script>
+      const driver = window.driver.js.driver;
+      const driverObj = driver();
+
+      driverObj.highlight({
+        element: "#logo-and-qr",
+        popover: {
+          title: "Konfirmasi Kehadiran",
+          description: "Klik disini untuk mendownload tiket kehadiran",
+          showButtons: ["next"],
+          nextBtnText: "Mengerti!",
+          onNextClick: () => {
+            driverObj.destroy();
+          },
+        },
+      });
+
       const invitee = document.getElementById("invitee");
       const url = new URL(window.location.href);
       const name = url.searchParams.get("name");
       invitee.innerText = name;
+
+      const data = JSON.stringify({ name, table: "N/A" });
+
+      new QRCode(document.getElementById("qrcode"), {
+        text: data,
+        width: 190,
+        height: 190,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H,
+      });
     </script>
   </body>
 </html>

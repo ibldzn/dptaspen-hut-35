@@ -624,6 +624,10 @@ video {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .size-24 {
   width: 6rem;
   height: 6rem;
