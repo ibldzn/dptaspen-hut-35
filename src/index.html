@@ -3,39 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <link href="./styles.css" rel="stylesheet" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <title>HUT DP TASPEN ke-35</title>
   </head>
   <body class="min-w-screen min-h-screen flex flex-col">
-    <section class="bg-[#1D52A0] h-screen">
+    <section class="bg-[#1D52A0] h-screen relative overflow-hidden">
+      <img
+        src="./public/abstract2.png"
+        alt="Abstract"
+        width="400"
+        height="400"
+        class="absolute rotate-180 -top-44 -right-32"
+      />
+      <img
+        src="./public/abstract2.png"
+        alt="Abstract"
+        width="400"
+        height="400"
+        class="absolute -bottom-44 -left-32"
+      />
       <div
         class="flex flex-col justify-center items-center text-center text-white w-full h-full"
       >
-        <p class="text-sm font-bold tracking-[3em] mb-8">UNDANGAN</p>
         <div
-          class="flex flex-col py-4 items-center rounded-full bg-white size-64 text-center border-4 border-[#1AC0F3] overflow-hidden"
+          class="flex items-center justify-center gap-8 text-2xl font-bold mb-8"
         >
-          <img src="./public/35.png" alt="35" class="size-36" />
-          <div class="flex gap-1 items-center">
-            <p class="text-2xl font-semibold text-blue-600">bank</p>
-            <img src="./public/dp.png" alt="dp" class="size-7" />
-            <p class="text-2xl font-semibold text-blue-600">taspen</p>
-          </div>
+          <p>U</p>
+          <p>N</p>
+          <p>D</p>
+          <p>A</p>
+          <p>N</p>
+          <p>G</p>
+          <p>A</p>
+          <p>N</p>
         </div>
-      </div>
-    </section>
-    <section class="bg-[#ABE8FA] h-screen bg-[url('./public/dp-small.png')]">
-      <div class="flex flex-col justify-around items-center w-full h-full">
-        <div class="flex flex-col justify-center items-center">
-          <img src="./public/35-removebg.png" alt="35" class="size-52" />
-          <div class="flex gap-1 items-center">
-            <p class="text-2xl font-semibold text-blue-600">bank</p>
-            <img src="./public/dp.png" alt="dp" class="size-7" />
-            <p class="text-2xl font-semibold text-blue-600">taspen</p>
-          </div>
+        <div
+          class="flex flex-col py-4 items-center justify-center rounded-full bg-white size-72 text-center border-4 border-[#1AC0F3] overflow-hidden my-2"
+        >
+          <image src="./public/HUT.png" alt="HUT" class="size-64 pb-2" />
         </div>
-        <p class="text-2xl font-semibold text-blue-600">
-          Transformation to Growth and Sustainability
+        <p class="text-2xl text-center font-semibold tracking-wider mt-8">
+          Kepada
         </p>
+        <p
+          id="invitee"
+          class="text-3xl text-center font-semibold tracking-wider mt-2"
+        ></p>
       </div>
     </section>
     <section class="bg-[#FFF1D5] h-screen">
@@ -94,18 +110,26 @@
         </p>
       </div>
     </section>
-    <section class="bg-[#2C4E9E] h-screen">
+    <section class="bg-[#ABE8FA] h-screen bg-[url('./public/dp-small.png')]">
       <div class="flex flex-col justify-around items-center w-full h-full">
         <div class="flex flex-col justify-center items-center">
-          <div class="flex gap-2 items-center">
-            <p class="text-7xl font-semibold text-white">bank</p>
-            <img src="./public/dp.png" alt="dp" class="size-24" />
-            <p class="text-7xl font-semibold text-white">taspen</p>
+          <img src="./public/35-removebg.png" alt="35" class="size-52" />
+          <div class="flex gap-1 items-center">
+            <p class="text-2xl font-semibold text-blue-600">bank</p>
+            <img src="./public/dp.png" alt="dp" class="size-7" />
+            <p class="text-2xl font-semibold text-blue-600">taspen</p>
           </div>
-          <p class="text-2xl text-white">Mudah dan Nyaman</p>
         </div>
-        <p class="text-xl text-white justify-self-end">PT BPR DP TASPEN</p>
+        <p class="text-2xl font-semibold text-blue-600">
+          Transformation to Growth and Sustainability
+        </p>
       </div>
     </section>
+    <script>
+      const invitee = document.getElementById("invitee");
+      const url = new URL(window.location.href);
+      const name = url.searchParams.get("name");
+      invitee.innerText = name;
+    </script>
   </body>
 </html>
