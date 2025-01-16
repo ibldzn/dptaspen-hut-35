@@ -183,6 +183,7 @@
         const jsConfetti = new JSConfetti();
         const { searchParams: params } = new URL(window.location.href);
         const name = params.get("name");
+        const table = null;
         $("#invitee").text(name);
 
         $("#accept").click(() => {
@@ -201,8 +202,12 @@
             ],
           });
 
+          const data = {
+            name,
+            table,
+          };
           const qr = new QRCode("btn-qr-container", {
-            text: "https://www.google.com",
+            text: JSON.stringify(data),
             width: 256,
             height: 256,
           });
