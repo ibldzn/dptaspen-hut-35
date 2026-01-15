@@ -1,156 +1,144 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./styles.css" rel="stylesheet" />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-    <title>HUT DP TASPEN ke-35</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>HUT DP TASPEN ke-36</title>
   </head>
-  <body class="min-w-screen flex flex-col">
-    <section
-      class="bg-[#1D52A0] py-20 lg:py-0 h-screen relative overflow-hidden"
-    >
-      <img
-        src="./public/abstract2.png"
-        alt="Abstract"
-        class="absolute rotate-180 -top-40 -right-32 size-[500px]"
-      />
-      <img
-        src="./public/abstract2.png"
-        alt="Abstract"
-        class="absolute -bottom-40 -left-32 size-[500px]"
-      />
-      <div
-        class="flex flex-col justify-center items-center text-center text-white w-full h-full"
-      >
-        <div
-          class="flex items-center justify-center gap-8 text-6xl lg:text-2xl font-bold mb-16 lg:mb-8"
-        >
-          <p>U</p>
-          <p>N</p>
-          <p>D</p>
-          <p>A</p>
-          <p>N</p>
-          <p>G</p>
-          <p>A</p>
-          <p>N</p>
+  <body>
+    <div class="video-bg" aria-hidden="true">
+      <video autoplay muted loop playsinline poster="./public/abstract2.png">
+        <source src="./public/bg.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="video-overlay" aria-hidden="true"></div>
+
+    <main class="page">
+      <section class="hero">
+        <div class="hero-art reveal">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="anniv-ring float">
+            <img src="./public/36.png" alt="36 Tahun" />
+          </div>
+          <div class="brand-row">
+            <span>bank</span>
+            <img src="./public/dp.png" alt="DP TASPEN" />
+            <span>taspen</span>
+          </div>
         </div>
-        <div
-          class="flex flex-col py-4 items-center justify-center rounded-full bg-white size-[500px] lg:size-72 text-center border-4 border-[#1AC0F3] overflow-hidden"
-        >
-          <image
-            src="./public/HUT.png"
-            alt="HUT"
-            class="size-96 lg:size-64 pb-2"
-          />
-        </div>
-        <p
-          class="text-7xl lg:text-2xl text-center font-semibold tracking-wider mt-16 lg:mt-8 underline"
-        >
-          Kepada
-        </p>
-        <p
-          id="invitee"
-          class="text-8xl lg:text-3xl text-center font-semibold tracking-wider mt-2"
-        ></p>
-      </div>
-    </section>
 
-    <section class="bg-[#FFF1D5] h-screen py-0 lg:py-96">
-      <div class="flex flex-col justify-center items-center w-full h-full">
-        <div
-          class="flex flex-col justify-center items-center gap-8 bg-white border-4 border-[#FFCFA5] rounded-xl text-center uppercase px-52 py-32 lg:px-24 lg:py-4"
-        >
-          <div class="flex flex-col">
-            <p class="md:text-lg font-semibold text-[#FF9A42]">Hari</p>
-            <p
-              class="text-lg md:text-xl font-semibold text-[#707277] tracking-wide"
-            >
-              Sabtu
-            </p>
+        <div class="hero-content">
+          <span class="eyebrow reveal" style="--delay: 0.1s"
+            >Undangan Resmi</span
+          >
+          <h1 class="hero-title reveal" style="--delay: 0.2s">
+            HUT ke-36 Bank DP TASPEN
+          </h1>
+          <p class="hero-subtitle reveal" style="--delay: 0.3s">
+            Bersama merayakan 36 tahun pengabdian untuk layanan keuangan yang
+            sehat, tumbuh, dan berkelanjutan.
+          </p>
+          <div class="invitee-card reveal" style="--delay: 0.4s">
+            <span class="invitee-label">Kepada</span>
+            <span id="invitee" class="invitee-name">Tamu Undangan</span>
           </div>
-
-          <div class="flex flex-col items-center">
-            <p class="md:text-lg font-semibold text-[#FF9A42]">Tanggal</p>
-            <p class="text-lg md:text-xl font-semibold text-[#707277]">
-              Jan
-              <span class="font-extrabold text-4xl md:text-6xl mx-2">18</span>
-              2025
-            </p>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <p class="md:text-lg font-semibold text-[#FF9A42]">Pukul</p>
-            <p class="text-lg md:text-xl font-semibold text-[#707277]">
-              10.00 - 12.00 WIB
-            </p>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <p class="md:text-lg font-semibold text-[#FF9A42]">Tempat</p>
-            <div
-              class="flex flex-col gap-1 text-lg md:text-xl font-semibold text-[#707277]"
-            >
-              <span>STAR HALL L ANTAI 5</span>
-              <span>SANTIKA HOTEL MEGA CITY BEKASI</span>
-              <span>JL. AHMAD YANI NO. 01 BEKASI</span>
-            </div>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <p class="md:text-lg font-semibold text-[#FF9A42]">Acara</p>
-            <p class="text-lg md:text-xl font-semibold text-[#707277]">
-              Perayaan 35 TH Bank DP TASPEN
-            </p>
-          </div>
-
-          <div class="flex justify-center gap-4 mt-2">
-            <button
-              type="button"
-              class="w-fit bg-[#FF9A42] text-white px-4 py-2 rounded-lg hover:bg-[#FA8D2D]"
-            >
+          <div class="cta-row reveal" style="--delay: 0.5s">
+            <button type="button" class="btn btn-ghost">
               Tolak Undangan
             </button>
-            <button
-              type="button"
-              class="w-fit bg-[#FF9A42] text-white px-4 py-2 rounded-lg hover:bg-[#FA8D2D]"
-            >
+            <button type="button" class="btn btn-primary">
               Konfirmasi Kehadiran
             </button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="bg-[#ABE8FA] h-screen bg-[url('./public/dp-small.png')]">
-      <div class="flex flex-col justify-around items-center w-full h-full">
-        <div class="flex flex-col justify-center items-center">
-          <img
-            src="./public/35-removebg.png"
-            alt="35"
-            class="size-[500px] lg:size-52"
-          />
-          <div class="flex gap-2 lg:gap-1 items-center">
-            <p class="text-6xl lg:text-2xl font-semibold text-blue-600">bank</p>
-            <img src="./public/dp.png" alt="dp" class="size-20 lg:size-7" />
-            <p class="text-6xl lg:text-2xl font-semibold text-blue-600">
-              taspen
+      <section class="details">
+        <div class="section-header reveal" style="--delay: 0.1s">
+          <span class="section-eyebrow">Rangkaian Acara</span>
+          <h2>Detail Undangan</h2>
+          <p>
+            Mohon kehadiran Bapak/Ibu untuk merayakan pencapaian bersama dan
+            memperkuat langkah transformasi Bank DP TASPEN.
+          </p>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-card reveal" style="--delay: 0.2s">
+            <h3>Hari</h3>
+            <p>Sabtu</p>
+          </div>
+          <div class="detail-card reveal" style="--delay: 0.3s">
+            <h3>Tanggal</h3>
+            <p>
+              <span class="detail-emphasis">18</span>
+              Januari 2025
             </p>
           </div>
+          <div class="detail-card reveal" style="--delay: 0.4s">
+            <h3>Pukul</h3>
+            <p>10.00 - 12.00 WIB</p>
+          </div>
+          <div class="detail-card reveal" style="--delay: 0.5s">
+            <h3>Tempat</h3>
+            <p>Star Hall Lantai 5</p>
+            <p>Santika Hotel Mega City Bekasi</p>
+            <p>Jl. Ahmad Yani No. 01 Bekasi</p>
+          </div>
+          <div class="detail-card reveal" style="--delay: 0.6s">
+            <h3>Acara</h3>
+            <p>Perayaan 36 Tahun Bank DP TASPEN</p>
+          </div>
         </div>
-        <p class="text-4xl lg:text-2xl font-semibold text-blue-600 text-center">
-          Transformation to Growth and Sustainability
-        </p>
-      </div>
-    </section>
+      </section>
+
+      <section class="theme">
+        <div class="theme-card reveal" style="--delay: 0.2s">
+          <img
+            src="./public/36.png"
+            alt="HUT 36 Bank DP TASPEN"
+            class="theme-logo"
+          />
+          <span class="section-eyebrow">Tema Perayaan</span>
+          <h2>Transformation to Growth and Sustainability</h2>
+          <p>
+            Menegaskan komitmen Bank DP TASPEN untuk tumbuh adaptif, melayani
+            lebih luas, dan melangkah bersama keberlanjutan.
+          </p>
+        </div>
+      </section>
+    </main>
+
     <script>
       const invitee = document.getElementById("invitee");
       const url = new URL(window.location.href);
       const name = url.searchParams.get("name");
-      invitee.innerText = name;
+      invitee.textContent = name ? name : "Tamu Undangan";
+
+      const revealItems = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+          rootMargin: "0px 0px -10% 0px",
+        }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
     </script>
   </body>
 </html>
